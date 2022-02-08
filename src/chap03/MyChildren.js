@@ -1,7 +1,17 @@
 import React from "react";
 
 const MyChildren = (props) => {
-  return <div>안녕하세요, 제 이름은 {props.children} 입니다.</div>;
+  const { name, children } = props;
+
+  return (
+    <div>
+      Props 로 받은 이름 : {name} / children 으로 받은 : {children}
+    </div>
+  );
+};
+
+MyChildren.defaultProps = {
+  name: "default",
 };
 
 export default MyChildren;

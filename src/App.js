@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import { createGlobalStyle } from "styled-components";
-import TodoTemplate from "./todo-list/ToDoTemplate";
+import TodoTemplate from "./todo-list/components/ToDoTemplate";
+import TodoHead from "./todo-list/components/ToDoHead";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -13,7 +14,9 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <TodoTemplate>안녕하쉽니까</TodoTemplate>
+      <TodoTemplate>
+        <TodoHead />
+      </TodoTemplate>
     </div>
   );
 }

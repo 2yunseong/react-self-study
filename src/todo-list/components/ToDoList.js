@@ -11,9 +11,9 @@ const TodoListBlock = styled.div`
 const TodoList = () => {
   return (
     <TodoListBlock>
-      <ToDoItem text="프로젝트 생성하기" done={true} />
-      <ToDoItem text="컴포넌트 스타일링 하기" done={true} />
-      <ToDoItem text="Context 만들기" done={false} />
+      <ToDoItem text="수강신청예약 하기" done={true} />
+      <ToDoItem text="오감자 모임" done={true} />
+      <ToDoItem text="수강신청 하기" done={false} />
       <ToDoItem text="기능 구현하기" done={false} />
     </TodoListBlock>
   );

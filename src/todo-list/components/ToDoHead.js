@@ -28,8 +28,8 @@ const TodoHeadBlock = styled.div`
 const TodoHead = () => {
   return (
     <TodoHeadBlock>
-      <h1>2022년 2월 11일</h1>
-      <div className="day">금요일</div>
+      <h1>2022년 2월 12일</h1>
+      <div className="day">토요일</div>
       <div className="tasks-left">할일 2개 남음</div>
     </TodoHeadBlock>
   );

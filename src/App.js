@@ -1,17 +1,19 @@
 import React from "react";
 import "./App.css";
-import Counter from "./chap03/Counter";
-import MyChildren from "./chap03/MyChildren";
-import MyComponent from "./chap03/MyComponent.js";
-import Say from "./chap03/Say";
+import { createGlobalStyle } from "styled-components";
+import TodoTemplate from "./todo-list/ToDoTemplate";
+
+const GlobalStyle = createGlobalStyle`
+  body{
+    background: #e9ecef;
+  }
+`;
 
 function App() {
   return (
     <div className="App">
-      <MyChildren name="yunseong">Test</MyChildren>
-      <MyComponent name="yunseong2">Test</MyComponent>
-      <Counter />
-      <Say />
+      <GlobalStyle />
+      <TodoTemplate>안녕하쉽니까</TodoTemplate>
     </div>
   );
 }

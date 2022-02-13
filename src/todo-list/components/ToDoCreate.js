@@ -50,6 +50,7 @@ const InsertFormPositioner = styled.div`
   bottom: 0;
   left: 0;
   position: absolute;
+  transition: 0.125s all ease-in;
 `;
 
 const InsertForm = styled.form`
@@ -58,6 +59,9 @@ const InsertForm = styled.form`
   padding-top: 32px;
   padding-right: 32px;
   padding-bottom: 72px;
+
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
   border-top: 1px solid #e9ecef;
 `;
 
@@ -68,7 +72,7 @@ const Input = styled.input`
   border-bottom: 1px solid #dee2e6;
   outline: none;
   font-size: 18px;
-  box-sizing: border-box; ;
+  box-sizing: border-box;
 `;
 
 const ToDoCreate = () => {

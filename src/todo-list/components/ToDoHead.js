@@ -30,17 +30,20 @@ const TodoHead = () => {
   const todos = useToDoState();
   const undoneTasks = todos.filter((todo) => !todo.done);
   let today = new Date();
+
   const dateOption = {
     year: "numeric",
     month: "long",
     day: "numeric",
+    hour: "numeric",
   };
   const weekDayOption = {
     weekday: "long",
   };
 
-  const dateString = today.toLocaleDateString("ko-KR", dateOption);
-  const weekDayString = today.toLocaleDateString("ko-KR", weekDayOption);
+  const dateString = today.toLocaleDateString("en-US", dateOption);
+  const weekDayString = today.toLocaleDateString("en-US", weekDayOption);
+  console.log(today.getUTCHours());
 
   return (
     <TodoHeadBlock>

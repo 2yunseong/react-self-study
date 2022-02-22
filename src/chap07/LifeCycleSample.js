@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-class LifeCycleSample {
+class LifeCycleSample extends Component {
   state = {
     number: 0,
     color: null,
@@ -42,13 +42,20 @@ class LifeCycleSample {
     console.log("componentWillUnmount");
   }
 
-  // DOM에 변화가 일어나기 직전 색상 속성을 snapshot 값으로 반환하여 이것을 componentDidUpdate에서 조회 가능하게 함.
+  // DOM에 변화가 일어나기 직전 색상 속성을 snapshot 값으로 반환하여 이것을 componentDidUpdate에서 조회 가능하게 함.(3번째 인자로 전달됨.)
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log("getSnapshotBeforeUpdate");
     if (prevProps.color !== this.props.color) {
       return this.myRef.style.color;
     }
     return null;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log("componentDidUpdate", prevProps, prevState);
+    if (snapshot) {
+      console.log("업데이트 이전 색상:", snapshot);
+    }
   }
   handleClick = () => {
     this.setState({
@@ -57,7 +64,23 @@ class LifeCycleSample {
   };
 
   // 컴포넌트를 리 렌더링 한다.
-  render() {}
+  render() {
+    console.log("render");
+
+    const style = {
+      color: this.props.color,
+    };
+
+    return (
+      <>
+        <h1 style={style} ref={(ref) => (this.myRef = ref)}>
+          {this.state.number}
+        </h1>
+        <p>color : {this.state.color}</p>
+        <button onClick={this.handleClick}>더하기</button>
+      </>
+    );
+  }
 }
 
 export default LifeCycleSample;

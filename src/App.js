@@ -1,17 +1,8 @@
 import React from "react";
 import "./App.css";
-import ChapFourRender from "./chap04/ChapFourRender";
-import ChapFiveRender from "./chap05/ChapFiveRender";
-import ChapSixRender from "./chap06/ChapSixRender";
+import ChapEightRender from "./chap08/ChapEightRender";
 
-function App() {
-  return (
-    <div className='App'>
-      <ChapFourRender />
-      <ChapFiveRender />
-      <ChapSixRender />
-    </div>
-  );
-}
-
+const App = () => {
+  return <ChapEightRender />;
+};
 export default App;

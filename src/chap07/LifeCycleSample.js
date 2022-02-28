@@ -33,7 +33,7 @@ class LifeCycleSample extends Component {
   // 컴포넌트가 리렌더링 할지 말지 결정하는 메서드. true -> 다음 라이프사이클 메서드 계속 실행. false 면 작업중지
   shouldComponentUpdate(nextProps, nextState) {
     console.log("shouldComponentUpdate");
-    // 예제에서는 임의로 마지막 자리가 4면 리렌더링하지 않게 함.
+    // 임의로 마지막 자리가 4면 리렌더링하지 않게 함.
     return nextState.number % 10 !== 4;
   }
 

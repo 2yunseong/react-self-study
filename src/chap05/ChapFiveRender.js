@@ -16,5 +16,4 @@ class ChapFiveRender extends Component {
     );
   }
 }
-
 export default ChapFiveRender;

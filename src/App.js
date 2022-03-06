@@ -1,8 +1,7 @@
 import React from "react";
 import "./App.css";
-import ChapEightRender from "./chap08/ChapEightRender";
-
+import ChapSevenRender from "./chap07/ChapSevenRender";
 const App = () => {
-  return <ChapEightRender />;
+  return <ChapSevenRender />;
 };
 export default App;

@@ -19,6 +19,8 @@ class LifeCycleSample extends Component {
     console.log("getDerivedStateFromProps");
     // 현재 props가 state값과 다르다면,
     if (nextProps.color !== prevState.color) {
+      console.log("getDerivedStateFromProps: color changed");
+      console.log(`prevState:${prevState.color} nextProps:${nextProps.color}`);
       return { color: nextProps.color };
     }
     // 같다면
@@ -32,7 +34,7 @@ class LifeCycleSample extends Component {
 
   // 컴포넌트가 리렌더링 할지 말지 결정하는 메서드. true -> 다음 라이프사이클 메서드 계속 실행. false 면 작업중지
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate");
+    console.log(`shouldComponentUpdate : number ${nextState.number}`);
     // 임의로 마지막 자리가 4면 리렌더링하지 않게 함.
     return nextState.number % 10 !== 4;
   }

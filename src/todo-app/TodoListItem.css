@@ -1,0 +1,21 @@
+.TodoListItem {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid lightgray;
+
+}
+
+.TodoListItem::hover {
+    
+}
+
+.TodoListItem-checkbox {
+  display: flex;
+  flex: 1;
+  cursor: pointer;
+}
+
+.TodoListItem-remove-button {
+  cursor: pointer;
+}

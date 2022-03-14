@@ -1,0 +1,26 @@
+.TodoInsert {
+  display: flex;
+  background: aliceblue;
+}
+
+.TodoInsert-input {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 10px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.TodoInsert-submit-button {
+  background: none;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

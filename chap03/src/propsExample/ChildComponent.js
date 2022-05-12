@@ -1,6 +1,6 @@
 const ChildComponent = props => {
     return <div>
-        hello, I' m{props.name} and I'm {props.children}
+        hello, I' m {props.name} and I'm {props.children}
     </div>
 }
 

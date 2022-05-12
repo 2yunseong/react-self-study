@@ -1,5 +1,7 @@
-import ChildComponent from './ChildComponent';
+import ChildComponent from './propsExample/ChildComponent';
+import DestructurePropsComponent from './propsExample/DestructurePropsComponent';
 import './App.css';
+import PropTypesExample from './propsExample/PropTypesExample';
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
       </header>
       
         <ChildComponent>Children</ChildComponent>          
+        <DestructurePropsComponent name="2yunseong">Second Children</DestructurePropsComponent> 
+        <PropTypesExample>Third Children</PropTypesExample>
     </div>
   );
 }

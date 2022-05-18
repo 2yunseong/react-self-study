@@ -23,16 +23,19 @@ const IterationExample = () => {
         setInputName("");
     }
     
-    const onDelete = () => {
-
+    const onDelete = (id) => {
+        setUsers(users.filter(
+            (user) => {
+                return user.id !== id;
+            }
+        ));
     }
 
     return(<div>
         <input type="text" placeholder="write name.." onChange={onChange} value={inputName}/>
         <button onClick={onClick}>인원 추가</button>
-        <button onClick={onDelete}>인원 삭제</button>
         {users.map((user) => {
-            return <div key={user.id}>{user.name}</div>
+            return <li key={user.id} onDoubleClick={() => {onDelete(user.id)}}>{user.name}</li>
         })}
     </div>);
     

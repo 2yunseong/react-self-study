@@ -5,11 +5,20 @@ const ColorBox = () => {
         <ColorContext.Consumer>
         {
             ({ state }) => (
+                <>
                 <div style={{
                     width: '64px',
                     height: '64px',
                     background: state.color
                 }} />
+                <div 
+                    style={{
+                        width: '32px',
+                        height: '32px',
+                        background: state.subcolor                        
+                    }}
+                />
+                </>
             )
         }
         </ColorContext.Consumer>

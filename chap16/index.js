@@ -44,4 +44,16 @@ const render = () => {
   counter.innerText = state.counter;
 };
 
+divToggle.addEventListener("click", () => {
+  store.dispatch(toggleSwitch());
+});
+
+btnIncrease.addEventListener("click", () => {
+  store.dispatch(increase(1));
+});
+
+btnDecrease.addEventListener("click", () => {
+  store.dispatch(decrease());
+});
 render();
+store.subscribe(render);

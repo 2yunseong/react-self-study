@@ -10,3 +10,8 @@ const DECREASE = "DECREASE";
 const toggleSwitch = () => ({ type: TOGGLE_SWITCH });
 const increase = (difference) => ({ type: INCREASE, difference });
 const decrease = () => ({ type: DECREASE });
+
+const InitialState = {
+  toggle: false,
+  counter: 0,
+};

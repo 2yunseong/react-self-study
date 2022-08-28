@@ -1,3 +1,5 @@
+import { createStore } from "redux";
+
 const divToggle = document.querySelector(".toggle");
 const counter = document.querySelector("h1");
 const btnIncrease = document.querySelector("#increase");
@@ -28,3 +30,18 @@ function reducer(state = InitialState, action) {
       return state;
   }
 }
+
+const store = createStore(reducer);
+
+const render = () => {
+  const state = store.getState();
+  if (state.toggle) {
+    divToggle.classList.add("active");
+  } else {
+    divToggle.classList.remove("active");
+  }
+
+  counter.innerText = state.counter;
+};
+
+render();

@@ -11,13 +11,6 @@ const mapStateToProps = (state) => ({
   number: state.counter.number,
 });
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      increase,
-      decrease,
-    },
-    dispatch
-  );
-
-export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);
+export default connect(mapStateToProps, { increase, decrease })(
+  CounterContainer
+);

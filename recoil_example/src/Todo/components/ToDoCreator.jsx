@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSetRecoilState } from 'recoil';
-import { todoListState } from '../../atom/todoState';
+import { todoListState } from '../../atom/todoListState';
 
 let id = 0;
 const getId = () => {

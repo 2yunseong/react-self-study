@@ -4,25 +4,21 @@ import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 import TodoTemplate from './components/TodoTemplate';
 
-function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: 'test1',
-      checked: true,
-    },
-    {
-      id: 2,
-      text: 'test2',
-      checked: true,
-    },
-    {
-      id: 3,
-      text: 'test3',
+const createBulkTodos = () => {
+  const arr = [];
+  for (let i = 1; i <= 2500; i++) {
+    arr.push({
+      id: i,
+      text: `할일 : ${i}`,
       checked: false,
-    },
-  ]);
-  const nextId = useRef(4);
+    });
+  }
+  return arr;
+};
+
+function App() {
+  const [todos, setTodos] = useState(createBulkTodos);
+  const nextId = useRef(2501);
   const onInsert = useCallback(
     (text) => {
       const todo = {
@@ -30,7 +26,7 @@ function App() {
         text,
         checked: false,
       };
-      setTodos([...todos, todo]);
+      setTodos((todos) => [...todos, todo]);
       nextId.current += 1;
     },
     [todos],
@@ -38,14 +34,14 @@ function App() {
 
   const onRemove = useCallback(
     (id) => {
-      setTodos(todos.filter((todo) => todo.id !== id));
+      setTodos((todos) => todos.filter((todo) => todo.id !== id));
     },
     [todos],
   );
 
   const onToggle = useCallback(
     (id) => {
-      setTodos(
+      setTodos((todos) =>
         todos.map((todo) =>
           todo.id === id ? { ...todo, checked: !todo.checked } : todo,
         ),

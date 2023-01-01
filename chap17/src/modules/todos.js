@@ -1,67 +1,63 @@
-const CHANGE_INPUT = "todos/CHANGE_INPUT";
-const INSERT = "todos/INSERT";
-const TOGGLE = "todos/TOGGLE";
-const REMOVE = "todos/REMOVE";
-let id = 3;
+// 액션 정의
+const CHANGE_INPUT = 'todos/CHANGE_INPUT';
+const INSERT = 'todos/INSERT';
+const TOGGLE = 'todos/TOGGLE';
+const REMOVE = 'todos/REMOVE';
+let id = 2;
 
-export const changeInput = (input) => ({
-  type: CHANGE_INPUT,
-  input,
-});
+// 액션 생성함수 정의
+export const changeInput = (input) => {
+  return { type: CHANGE_INPUT, inputs: input };
+};
 
-export const insert = (text) => ({
-  type: INSERT,
-  todo: {
-    id: id++,
-    text,
-    done: false,
-  },
-});
+export const insert = () => {
+  return { type: INSERT };
+};
 
-export const toggle = (id) => ({
-  type: TOGGLE,
-  id,
-});
+export const toggle = (id) => {
+  return { type: TOGGLE, id: id };
+};
 
-export const remove = (id) => ({
-  type: REMOVE,
-  id,
-});
+export const remove = (id) => {
+  return { type: REMOVE, id: id };
+};
 
 const initialState = {
-  input: "",
+  inputs: '',
   todos: [
     {
       id: 1,
-      text: "리덕스 기초 배우기",
-      done: true,
-    },
-    {
-      id: 2,
-      text: "리액트와 리덕스 사용하기",
+      text: 'test1',
       done: false,
     },
   ],
 };
 
+// reducer 정의
 const todos = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_INPUT:
       return {
         ...state,
-        input: action.input,
+        inputs: action.inputs,
       };
     case INSERT:
       return {
-        ...state,
-        todos: state.todos.concat(action.todo),
+        inputs: '',
+        todos: [...state.todos, { id: id++, text: state.inputs, done: false }],
       };
     case TOGGLE:
       return {
         ...state,
-        todos: state.todos.map((todo) =>
-          todo.id === action.id ? { ...todo, done: !todo.done } : todo
-        ),
+        todos: state.todos.map((todo) => {
+          if (action.id === todo.id) {
+            return {
+              ...todo,
+              done: !todo.done,
+            };
+          }
+          return todo;
+        }),
       };
     case REMOVE:
       return {
@@ -72,3 +68,5 @@ const todos = (state = initialState, action) => {
       return state;
   }
 };
+
+export default todos;
